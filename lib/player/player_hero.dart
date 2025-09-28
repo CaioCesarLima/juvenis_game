@@ -14,6 +14,7 @@ class PlayerHero extends SimplePlayer
     : super(
         animation: PlayerSpriteSheet.simpleDirectionAnimation,
         life: userLife.state.toDouble(),
+        speed: 30 + ((userLevel.state.toInt() * 250) / 100),
       ) {
     setupLighting(
       LightingConfig(radius: getRadius(), color: Colors.white.withAlpha(10)),

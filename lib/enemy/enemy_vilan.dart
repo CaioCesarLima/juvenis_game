@@ -7,7 +7,7 @@ class EnemyVilan extends SimpleEnemy {
     : super(
         life: 100,
         animation: EnemySpritesheet.simpleDirectionAnimation,
-        speed: 40,
+        speed: 15 + ((actualLevel.state * 250) / 100),
       );
 
   @override

@@ -22,33 +22,10 @@ class SpeedDecoration extends GameDecoration with Sensor<PlayerHero> {
     removeFromParent();
 
     try {
-      final existingRecord = await supabase
+      final response = await supabase
           .from('players')
-          .select()
-          .eq('code', userCode.state)
-          .maybeSingle();
-
-      if (existingRecord == null) {
-        final insertResponse = await supabase.from('players').insert({
-          'code': userCode.state,
-          'name': userName.state,
-          'level': actualLevel.state,
-          'score': userScore.state,
-        });
-      } else {
-        final response = await supabase
-            .from('players')
-            .update({'level': actualLevel.state, 'score': userScore.state})
-            .eq('code', userCode.state);
-      }
-
-      final verifyResponse = await supabase
-          .from('players')
-          .select()
-          .eq('code', userCode.state)
-          .maybeSingle();
-
-      if (verifyResponse != null) {}
+          .update({'level': actualLevel.state, 'score': userScore.state})
+          .eq('code', userCode.state);
     } catch (e) {
       print('SpeedDecoration: Error updating Supabase: $e');
     }
