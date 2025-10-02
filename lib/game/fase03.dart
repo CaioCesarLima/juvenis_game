@@ -6,6 +6,7 @@ import 'package:juvenis_bonfire/decorations/speed_decoration.dart';
 import 'package:juvenis_bonfire/decorations/tesouro_decoration.dart';
 import 'package:juvenis_bonfire/enemy/boss_factory.dart';
 import 'package:juvenis_bonfire/enemy/enemy_vilan.dart';
+import 'package:juvenis_bonfire/game/fase01.dart';
 import 'package:juvenis_bonfire/game/fase02.dart';
 import 'package:juvenis_bonfire/game/game_controller.dart';
 import 'package:juvenis_bonfire/player/player_hero.dart';
@@ -14,14 +15,14 @@ import 'package:juvenis_bonfire/store/user/user_actions.dart';
 import 'package:juvenis_bonfire/store/user/user_atoms.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class Fase01 extends StatefulWidget {
-  const Fase01({super.key});
+class Fase03 extends StatefulWidget {
+  const Fase03({super.key});
 
   @override
-  State<Fase01> createState() => _Fase01State();
+  State<Fase03> createState() => _Fase03State();
 }
 
-class _Fase01State extends State<Fase01> {
+class _Fase03State extends State<Fase03> {
   late VoidCallback _listener;
   final supabase = Supabase.instance.client;
 
@@ -30,7 +31,6 @@ class _Fase01State extends State<Fase01> {
     super.initState();
     reset();
     resetUser();
-    goToFase01();
     _listener = () {};
     userLife.addListener(_listener);
   }
@@ -45,13 +45,12 @@ class _Fase01State extends State<Fase01> {
   Widget build(BuildContext context) {
     return BonfireWidget(
       lightingColorGame: Colors.black.withAlpha(255),
-      showCollisionArea: true,
       collisionConfig: BonfireCollisionConfigDefault(),
       backgroundColor: Colors.blueGrey,
       components: [GameController()],
 
       map: WorldMapByTiled(
-        WorldMapReader.fromAsset('map/fase_1.tmj'),
+        WorldMapReader.fromAsset('map/fase_3.tmj'),
         forceTileSize: Vector2(32, 32),
         objectsBuilder: {
           "enemy": (p) =>
@@ -60,7 +59,7 @@ class _Fase01State extends State<Fase01> {
             position: p.position,
             size: Vector2(96, 96),
             name: p.name!,
-            phaseNumber: 1,
+            phaseNumber: 3,
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),
@@ -94,42 +93,6 @@ class _Fase01State extends State<Fase01> {
       player: PlayerHero(
         position: Vector2(7 * 16, 5 * 16),
         size: Vector2(96, 96),
-      ),
-    );
-  }
-}
-
-class RankinButonOverlay extends StatelessWidget {
-  const RankinButonOverlay({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      top: 50,
-      right: 50,
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.purpleAccent),
-          borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFF1a1a2e), Color(0xFF16213e), Color(0xFF0f3460)],
-          ),
-        ),
-        height: 50,
-        width: 50,
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamed('/ranking');
-            },
-            child: Center(
-              child: Icon(Icons.ads_click, color: Colors.white, size: 32),
-            ),
-          ),
-        ),
       ),
     );
   }

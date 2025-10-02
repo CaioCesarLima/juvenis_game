@@ -200,8 +200,8 @@
                  "type":"chef",
                  "visible":true,
                  "width":16,
-                 "x":561,
-                 "y":548
+                 "x":109.666666666667,
+                 "y":94
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -428,7 +428,7 @@
                  "id":27,
                  "name":"",
                  "rotation":0,
-                 "type":"",
+                 "type":"collision",
                  "visible":true,
                  "width":9.84973,
                  "x":19.0751350000001,
@@ -639,7 +639,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":47,
+ "nextobjectid":48,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

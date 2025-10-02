@@ -282,8 +282,8 @@
                  "type":"",
                  "visible":true,
                  "width":28.981,
-                 "x":72.1761666666666,
-                 "y":72.0338166666667
+                 "x":138.842833333333,
+                 "y":69.36715
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -375,37 +375,20 @@
                 }, 
                 {
                  "height":16,
-                 "id":37,
-                 "name":"chef",
-                 "properties":[
-                        {
-                         "name":"level",
-                         "type":"int",
-                         "value":1
-                        }],
-                 "rotation":0,
-                 "type":"chef",
-                 "visible":true,
-                 "width":16,
-                 "x":112.666666666667,
-                 "y":80
-                }, 
-                {
-                 "height":16,
                  "id":38,
                  "name":"chef",
                  "properties":[
                         {
                          "name":"level",
                          "type":"int",
-                         "value":1
+                         "value":4
                         }],
                  "rotation":0,
                  "type":"chef",
                  "visible":true,
                  "width":16,
-                 "x":112.666666666667,
-                 "y":80
+                 "x":97.3333333333337,
+                 "y":64
                 }],
          "opacity":1,
          "type":"objectgroup",

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:asp/asp.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:juvenis_bonfire/store/user/user_actions.dart';
 import 'package:juvenis_bonfire/config/supabase_config.dart';
 import 'package:juvenis_bonfire/widgets/game_router.dart';
@@ -75,7 +73,6 @@ class _LoginPageState extends State<LoginPage>
         setScore(response['score']);
         setCode(code);
         // Navegar para o GameRouter
-        finishLoading();
         if (mounted) {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => const GameRouter()),

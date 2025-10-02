@@ -1,5 +1,6 @@
 // Action creation
 import 'package:asp/asp.dart';
+import 'package:juvenis_bonfire/store/chef/chef_atoms.dart';
 import 'package:juvenis_bonfire/store/user/user_atoms.dart';
 
 final upgradeLevel = atomAction((set) {
@@ -8,7 +9,12 @@ final upgradeLevel = atomAction((set) {
       set(userLevel, UserLevels.fase_02);
       break;
     case UserLevels.fase_02:
-      // Pode adicionar mais níveis aqui no futuro
+      set(userLevel, UserLevels.fase_03);
+      break;
+    case UserLevels.fase_03:
+      set(userLevel, UserLevels.fase_04);
+      break;
+    case UserLevels.fase_04:
       break;
   }
   print("oi ${userLevel.state.name()}");
@@ -23,12 +29,19 @@ final setScore = atomAction1((set, int score) {
 final setLevel = atomAction1((set, int level) {
   set(actualLevel, level);
   // Converte o level int para o enum correspondente
+  reset();
   switch (level) {
     case 1:
       set(userLevel, UserLevels.fase_01);
       break;
     case 2:
       set(userLevel, UserLevels.fase_02);
+      break;
+    case 3:
+      set(userLevel, UserLevels.fase_03);
+      break;
+    case 4:
+      set(userLevel, UserLevels.fase_04);
       break;
     default:
       set(userLevel, UserLevels.fase_01);
@@ -61,6 +74,12 @@ final decreaseLevel = atomAction((set) {
     case UserLevels.fase_02:
       set(userLevel, UserLevels.fase_01);
       break;
+    case UserLevels.fase_03:
+      set(userLevel, UserLevels.fase_02);
+      break;
+    case UserLevels.fase_04:
+      set(userLevel, UserLevels.fase_03);
+      break;
   }
 });
 
@@ -80,7 +99,7 @@ final demage = atomAction((set) {
     demageTotal = 25;
   } else if (userLevel.state.toInt() <= 9) {
     demageTotal = 34;
-  } else if (userLevel.state.toInt() <= 1) {
+  } else if (userLevel.state.toInt() <= 10) {
     demageTotal = 50;
   } else if (userLevel.state.toInt() == 12) {
     demageTotal = 100;

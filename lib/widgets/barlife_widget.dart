@@ -9,10 +9,13 @@ class BarlifeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
+      height: 20,
       color: Colors.brown,
       child: AtomBuilder(
-        builder: (_, get) =>
-            Container(color: Colors.green, height: userLife.state.toDouble()),
+        builder: (_, get) {
+          final lifePercentage = userLife.state / 100.0;
+          return Container(color: Colors.green, height: 20 * lifePercentage);
+        },
       ),
     );
   }

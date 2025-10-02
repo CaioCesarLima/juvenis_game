@@ -1,6 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:juvenis_bonfire/enemy/enemy_spritesheet.dart';
 import 'package:juvenis_bonfire/store/user/user_atoms.dart';
+import 'package:juvenis_bonfire/store/chef/chef_atoms.dart';
 
 class EnemyVilan extends SimpleEnemy {
   EnemyVilan({required super.position, required super.size})
@@ -12,13 +13,24 @@ class EnemyVilan extends SimpleEnemy {
 
   @override
   void update(double dt) {
-    seeAndMoveToPlayer(
-      closePlayer: (player) {
-        simpleAttackMelee(damage: 0, size: size);
-      },
-      radiusVision: 128,
-      visionAngle: 10,
-    );
+    // Debug: verificar estado
+    if (isPlayerNearChef.state) {
+      print("Inimigo parado - jogador próximo ao chef");
+    }
+
+    // Só se move se o jogador não estiver próximo ao chef
+    if (!isPlayerNearChef.state) {
+      seeAndMoveToPlayer(
+        closePlayer: (player) {
+          simpleAttackMelee(damage: 0, size: size);
+        },
+        radiusVision: 128,
+        visionAngle: 10,
+      );
+    } else {
+      // Para o movimento quando próximo ao chef
+      stopMove();
+    }
     super.update(dt);
   }
 

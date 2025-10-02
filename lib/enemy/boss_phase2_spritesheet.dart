@@ -1,8 +1,8 @@
 import 'package:bonfire/bonfire.dart';
 
-class EnemyChefSpritesheet {
+class BossPhase2Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-    "enemy/Idle.png",
+    "enemy/idle_2.png",
     SpriteAnimationData.sequenced(
       amount: 5,
       stepTime: 0.15,
@@ -11,7 +11,7 @@ class EnemyChefSpritesheet {
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-    "enemy/slime_green.png",
+    "enemy/idle_2.png",
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.15,
@@ -21,7 +21,7 @@ class EnemyChefSpritesheet {
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
-    "enemy/chef_hit.png",
+    "enemy/hit_2.png",
     SpriteAnimationData.sequenced(
       amount: 5,
       stepTime: 0.10,

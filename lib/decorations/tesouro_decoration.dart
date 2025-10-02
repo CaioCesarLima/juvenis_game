@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:juvenis_bonfire/store/chef/chef_atoms.dart';
 import 'package:juvenis_bonfire/store/user/user_atoms.dart';
 import 'package:juvenis_bonfire/store/user/user_actions.dart';
+import 'package:logger/web.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class TesouroDecoration extends GameDecoration with TapGesture {
@@ -59,6 +60,7 @@ class TesouroDecoration extends GameDecoration with TapGesture {
   Future<void> _openTreasure() async {
     if (!_isOpen) {
       _isOpen = true;
+      final buildContext = context;
 
       // Opção 1: Remover o tesouro e adicionar um novo com sprite diferente
       removeFromParent();
@@ -67,22 +69,25 @@ class TesouroDecoration extends GameDecoration with TapGesture {
       gameRef.add(
         TesouroAbertoDecoration.withSprite(position: position, size: size),
       );
-      if (userLevel.state.toInt() >= actualLevel.state) {
-        setActualLevel();
-        final insertResponse = await supabase.from('players').insert({
-          'code': userCode.state,
-          'name': userName.state,
-          'level': actualLevel.state,
-          'score': userScore.state,
-        });
 
-        TalkDialog.show(context, [
-          Say(text: [TextSpan(text: "Você subiu de nível!")]),
-        ], backgroundColor: Colors.transparent);
+      if (userLevel.state.toInt() >= actualLevel.state) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          setActualLevel();
+          upgradeScore(50);
+
+          () async {
+            await supabase
+                .from('players')
+                .update({'level': actualLevel.state, 'score': userScore.state})
+                .eq('code', userCode.state);
+            try {
+              TalkDialog.show(buildContext, [
+                Say(text: [TextSpan(text: "Você subiu de nível!")]),
+              ], backgroundColor: Colors.transparent);
+            } catch (_) {}
+          }();
+        });
       }
-      await Future.delayed(
-        Duration(milliseconds: 500),
-      ).then((v) => upgradeScore(50));
     }
   }
 }

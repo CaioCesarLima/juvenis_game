@@ -20,13 +20,13 @@ class PlayerHero extends SimplePlayer
       LightingConfig(radius: getRadius(), color: Colors.white.withAlpha(10)),
     );
     setupLifeBar(
-      size: Vector2(40, 8),
+      size: Vector2(40, 6),
       backgroundColor: Colors.red,
       borderColor: Colors.black,
-      showLifeText: true,
+      showLifeText: false,
       borderRadius: BorderRadius.circular(5),
       offset: Vector2(0, 10),
-      textStyle: TextStyle(color: Colors.white, fontSize: 10),
+      textStyle: TextStyle(color: Colors.white, fontSize: 6),
     );
   }
 
@@ -34,12 +34,22 @@ class PlayerHero extends SimplePlayer
   Future<void> onLoad() {
     add(RectangleHitbox(size: Vector2(25, 25), position: Vector2(35, 35)));
 
+    // Sincroniza a vida inicial com o userLife
+    Logger().i(
+      "onLoad - initial sync: userLife=${userLife.state}, current life=$life",
+    );
+    updateLife(userLife.state.toDouble());
+    Logger().i(
+      "onLoad - after sync: userLife=${userLife.state}, current life=$life",
+    );
+
     // Cria o listener para atualizar a iluminação e vida quando mudar
     _userProfileListener = () {
       // Atualiza a vida do player com o valor do atom
       final newLife = userLife.state.toDouble();
-      Logger().i("newLife: $newLife");
+      Logger().i("DISPAROU AQUI: $newLife, current life: $life");
       updateLife(newLife);
+      Logger().i("After updateLife: $newLife, current life: $life");
 
       // Se a vida foi resetada e o player estava morto, reviver
       if (newLife > 0 && isDead) {
@@ -76,8 +86,17 @@ class PlayerHero extends SimplePlayer
     double damage,
     dynamic attacker,
   ) {
-    super.onReceiveDamage(origin, damage, attacker);
-    // Executa a ação demage quando o player recebe dano
+    Logger().i(
+      "PlayerHero.onReceiveDamage - damage: $damage, current life: $life, userLife: ${userLife.state}",
+    );
+    // Executa a ação demage ANTES do super para sincronizar corretamente
     demage();
+    Logger().i(
+      "PlayerHero.onReceiveDamage - after demage() - life: $life, userLife: ${userLife.state}",
+    );
+    super.onReceiveDamage(origin, damage, attacker);
+    Logger().i(
+      "PlayerHero.onReceiveDamage - after super - life: $life, userLife: ${userLife.state}",
+    );
   }
 }

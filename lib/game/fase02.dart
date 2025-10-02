@@ -4,8 +4,9 @@ import 'package:juvenis_bonfire/decorations/life_decoration.dart';
 import 'package:juvenis_bonfire/decorations/light_decoration.dart';
 import 'package:juvenis_bonfire/decorations/speed_decoration.dart';
 import 'package:juvenis_bonfire/decorations/tesouro_decoration.dart';
-import 'package:juvenis_bonfire/enemy/enemy_chef.dart';
+import 'package:juvenis_bonfire/enemy/boss_factory.dart';
 import 'package:juvenis_bonfire/enemy/enemy_vilan.dart';
+import 'package:juvenis_bonfire/game/fase01.dart';
 import 'package:juvenis_bonfire/game/game_controller.dart';
 import 'package:juvenis_bonfire/player/player_hero.dart';
 import 'package:juvenis_bonfire/store/chef/chef_atoms.dart';
@@ -56,10 +57,11 @@ class _Fase02State extends State<Fase02> {
         objectsBuilder: {
           "enemy": (p) =>
               EnemyVilan(position: p.position, size: Vector2(24, 24)),
-          "chef": (p) => EnemyChef(
+          "chef": (p) => BossFactory.createBoss(
             position: p.position,
             size: Vector2(96, 96),
             name: p.name!,
+            phaseNumber: 2,
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),
@@ -82,13 +84,18 @@ class _Fase02State extends State<Fase02> {
       playerControllers: [
         Keyboard(config: KeyboardConfig()),
         Joystick(
-          directional: JoystickDirectional(alignment: Alignment.bottomRight),
+          directional: JoystickDirectional(
+            alignment: Alignment.bottomRight,
+            color: Colors.purple,
+          ),
         ),
       ],
       overlayBuilderMap: {
         'navigation': (context, game) => const NavigationOverlay(),
+        'ranking': (context, game) => const RankinButonOverlay(),
       },
-      initialActiveOverlays: ['navigation'],
+      initialActiveOverlays: ['navigation', 'ranking'],
+
       player: PlayerHero(
         position: Vector2(
           10 * 32,
@@ -114,8 +121,17 @@ class NavigationOverlay extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.7),
-              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.purpleAccent),
+              borderRadius: BorderRadius.circular(15),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF1a1a2e),
+                  Color(0xFF16213e),
+                  Color(0xFF0f3460),
+                ],
+              ),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -160,10 +176,11 @@ class NavigationOverlay extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
                     int userLevelFase = userLevel.state.toInt();
+
                     if (userLevelFase > 1) {
                       decreaseLevel();
 
@@ -173,10 +190,10 @@ class NavigationOverlay extends StatelessWidget {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.purpleAccent,
                     foregroundColor: Colors.white,
                   ),
-                  child: const Text('Nível Anterior'),
+                  child: const Icon(Icons.arrow_back),
                 ),
                 const SizedBox(height: 5),
                 ElevatedButton(
@@ -185,17 +202,16 @@ class NavigationOverlay extends StatelessWidget {
                     int levelActual = actualLevel.state;
                     if (userLevelFase < levelActual) {
                       upgradeLevel();
-
                       Navigator.of(
                         context,
                       ).pushReplacementNamed(userLevel.state.toRoute());
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.purpleAccent,
                     foregroundColor: Colors.white,
                   ),
-                  child: const Text('Próximo Nível'),
+                  child: const Icon(Icons.arrow_forward),
                 ),
               ],
             ),

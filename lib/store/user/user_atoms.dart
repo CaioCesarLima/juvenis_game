@@ -9,7 +9,7 @@ final actualLevel = atom<int>(2);
 final isLoading = atom<bool>(true);
 final userCode = atom<String>("");
 
-enum UserLevels { fase_01, fase_02 }
+enum UserLevels { fase_01, fase_02, fase_03, fase_04 }
 
 extension LevelParsing on UserLevels {
   int toInt() {
@@ -18,6 +18,10 @@ extension LevelParsing on UserLevels {
         return 1;
       case UserLevels.fase_02:
         return 2;
+      case UserLevels.fase_03:
+        return 3;
+      case UserLevels.fase_04:
+        return 4;
     }
   }
 
@@ -27,6 +31,10 @@ extension LevelParsing on UserLevels {
         return "/fase01";
       case UserLevels.fase_02:
         return "/fase02";
+      case UserLevels.fase_03:
+        return "/fase03";
+      case UserLevels.fase_04:
+        return "/fase04";
     }
   }
 
@@ -36,6 +44,10 @@ extension LevelParsing on UserLevels {
         return "Fase 01";
       case UserLevels.fase_02:
         return "Fase 02";
+      case UserLevels.fase_03:
+        return "Fase 03";
+      case UserLevels.fase_04:
+        return "Fase 04";
     }
   }
 }
