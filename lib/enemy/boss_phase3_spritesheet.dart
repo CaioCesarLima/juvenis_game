@@ -66,29 +66,29 @@ class BossPhase4Spritesheet {
 
 class BossPhase5Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_4.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(230, 230),
     ),
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_4.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(230, 230),
     ),
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
-    "enemy/hit_3.png",
+    "enemy/hit_4.png",
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.10,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(230, 230),
     ),
   );
 
@@ -98,25 +98,25 @@ class BossPhase5Spritesheet {
 
 class BossPhase6Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_6.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(50, 50),
     ),
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_6.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(50, 50),
     ),
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
-    "enemy/hit_3.png",
+    "enemy/hit_6.png",
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.10,
@@ -130,7 +130,7 @@ class BossPhase6Spritesheet {
 
 class BossPhase7Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_7.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -139,7 +139,7 @@ class BossPhase7Spritesheet {
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_7.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -148,7 +148,7 @@ class BossPhase7Spritesheet {
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
-    "enemy/hit_3.png",
+    "enemy/hit_7.png",
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.10,
@@ -162,7 +162,7 @@ class BossPhase7Spritesheet {
 
 class BossPhase8Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_8.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -171,7 +171,7 @@ class BossPhase8Spritesheet {
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_8.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -180,7 +180,7 @@ class BossPhase8Spritesheet {
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
-    "enemy/hit_3.png",
+    "enemy/hit_8.png",
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.10,
@@ -194,7 +194,7 @@ class BossPhase8Spritesheet {
 
 class BossPhase9Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_9.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -203,7 +203,7 @@ class BossPhase9Spritesheet {
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_9.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -212,7 +212,7 @@ class BossPhase9Spritesheet {
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
-    "enemy/hit_3.png",
+    "enemy/hit_9.png",
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.10,
@@ -226,7 +226,7 @@ class BossPhase9Spritesheet {
 
 class BossPhase10Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_10.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -235,7 +235,7 @@ class BossPhase10Spritesheet {
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-    "enemy/idle_3.png",
+    "enemy/idle_10.png",
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
@@ -244,7 +244,7 @@ class BossPhase10Spritesheet {
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
-    "enemy/hit_3.png",
+    "enemy/hit_10.png",
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.10,

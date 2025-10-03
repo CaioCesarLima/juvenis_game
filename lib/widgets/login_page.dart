@@ -71,6 +71,7 @@ class _LoginPageState extends State<LoginPage>
         setLevel(response['level']);
         setLight(response['light']);
         setScore(response['score']);
+        setSpeed(response['speed']);
         setCode(code);
         // Navegar para o GameRouter
         if (mounted) {

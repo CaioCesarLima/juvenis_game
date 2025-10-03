@@ -45,7 +45,7 @@ class _Fase01State extends State<Fase01> {
   Widget build(BuildContext context) {
     return BonfireWidget(
       lightingColorGame: Colors.black.withAlpha(255),
-      showCollisionArea: true,
+      // showCollisionArea: true,
       collisionConfig: BonfireCollisionConfigDefault(),
       backgroundColor: Colors.blueGrey,
       components: [GameController()],

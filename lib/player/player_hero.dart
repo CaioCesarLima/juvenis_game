@@ -14,7 +14,7 @@ class PlayerHero extends SimplePlayer
     : super(
         animation: PlayerSpriteSheet.simpleDirectionAnimation,
         life: userLife.state.toDouble(),
-        speed: 30 + ((userLevel.state.toInt() * 250) / 100),
+        speed: 30 + ((userSpeed.state * 250) / 100),
       ) {
     setupLighting(
       LightingConfig(radius: getRadius(), color: Colors.white.withAlpha(10)),
@@ -23,10 +23,11 @@ class PlayerHero extends SimplePlayer
       size: Vector2(40, 6),
       backgroundColor: Colors.red,
       borderColor: Colors.black,
-      showLifeText: false,
+      showLifeText: true,
       borderRadius: BorderRadius.circular(5),
+
       offset: Vector2(0, 10),
-      textStyle: TextStyle(color: Colors.white, fontSize: 6),
+      textStyle: TextStyle(color: Colors.white, fontSize: 4),
     );
   }
 

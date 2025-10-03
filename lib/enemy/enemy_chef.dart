@@ -12,20 +12,23 @@ class EnemyChef extends BossBase {
       );
 
   @override
-  String getBossName() => "Chef";
+  String getBossName() => "Chef Iniciante";
 
   @override
-  String getVictoryMessage() => "Você venceu dessa vez!";
+  String getVictoryMessage() =>
+      "Você venceu dessa vez! Mas há outros mais poderosos...";
 
   @override
   String getCorrectAnswerMessage() =>
       "Correto, mas não vou desistir tão facilmente!";
 
   @override
-  String getWrongAnswerMessage() => "Errado!";
+  String getWrongAnswerMessage() =>
+      "Errado! Você não está pronto para os verdadeiros desafios!";
 
   @override
-  String getInitialMessage() => "Veremos se será capaz de passar por mim!!";
+  String getInitialMessage() =>
+      "Bem-vindo, jovem aventureiro! Veremos se será capaz de passar por mim!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>

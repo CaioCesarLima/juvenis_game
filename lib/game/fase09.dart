@@ -15,14 +15,14 @@ import 'package:juvenis_bonfire/store/user/user_actions.dart';
 import 'package:juvenis_bonfire/store/user/user_atoms.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class Fase04 extends StatefulWidget {
-  const Fase04({super.key});
+class Fase09 extends StatefulWidget {
+  const Fase09({super.key});
 
   @override
-  State<Fase04> createState() => _Fase04State();
+  State<Fase09> createState() => _Fase09State();
 }
 
-class _Fase04State extends State<Fase04> {
+class _Fase09State extends State<Fase09> {
   late VoidCallback _listener;
   final supabase = Supabase.instance.client;
 
@@ -51,7 +51,7 @@ class _Fase04State extends State<Fase04> {
 
       // showCollisionArea: true,
       map: WorldMapByTiled(
-        WorldMapReader.fromAsset('map/fase_4.tmj'),
+        WorldMapReader.fromAsset('map/fase_9.tmj'),
         forceTileSize: Vector2(32, 32),
         objectsBuilder: {
           "enemy": (p) =>
@@ -60,7 +60,7 @@ class _Fase04State extends State<Fase04> {
             position: p.position,
             size: Vector2(96, 96),
             name: p.name!,
-            phaseNumber: 4,
+            phaseNumber: 9,
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),

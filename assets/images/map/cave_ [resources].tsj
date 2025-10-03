@@ -394,6 +394,69 @@
              "x":0,
              "y":0
             }
+        }, 
+        {
+         "animation":[
+                {
+                 "duration":100,
+                 "tileid":91
+                }, 
+                {
+                 "duration":100,
+                 "tileid":92
+                }, 
+                {
+                 "duration":100,
+                 "tileid":93
+                }, 
+                {
+                 "duration":100,
+                 "tileid":94
+                }],
+         "id":91
+        }, 
+        {
+         "animation":[
+                {
+                 "duration":100,
+                 "tileid":103
+                }, 
+                {
+                 "duration":100,
+                 "tileid":104
+                }, 
+                {
+                 "duration":100,
+                 "tileid":105
+                }, 
+                {
+                 "duration":100,
+                 "tileid":106
+                }],
+         "id":103,
+         "objectgroup":
+            {
+             "draworder":"index",
+             "id":2,
+             "name":"",
+             "objects":[
+                    {
+                     "height":12.1632120586276,
+                     "id":1,
+                     "name":"",
+                     "rotation":0,
+                     "type":"",
+                     "visible":true,
+                     "width":12.0938,
+                     "x":2.09700406395736,
+                     "y":-0.026975782811459
+                    }],
+             "opacity":1,
+             "type":"objectgroup",
+             "visible":true,
+             "x":0,
+             "y":0
+            }
         }],
  "tilewidth":16,
  "type":"tileset",

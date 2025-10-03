@@ -15,14 +15,14 @@ import 'package:juvenis_bonfire/store/user/user_actions.dart';
 import 'package:juvenis_bonfire/store/user/user_atoms.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class Fase04 extends StatefulWidget {
-  const Fase04({super.key});
+class Fase07 extends StatefulWidget {
+  const Fase07({super.key});
 
   @override
-  State<Fase04> createState() => _Fase04State();
+  State<Fase07> createState() => _Fase07State();
 }
 
-class _Fase04State extends State<Fase04> {
+class _Fase07State extends State<Fase07> {
   late VoidCallback _listener;
   final supabase = Supabase.instance.client;
 
@@ -51,7 +51,7 @@ class _Fase04State extends State<Fase04> {
 
       // showCollisionArea: true,
       map: WorldMapByTiled(
-        WorldMapReader.fromAsset('map/fase_4.tmj'),
+        WorldMapReader.fromAsset('map/fase_7.tmj'),
         forceTileSize: Vector2(32, 32),
         objectsBuilder: {
           "enemy": (p) =>
@@ -60,7 +60,7 @@ class _Fase04State extends State<Fase04> {
             position: p.position,
             size: Vector2(96, 96),
             name: p.name!,
-            phaseNumber: 4,
+            phaseNumber: 7,
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),
@@ -92,7 +92,7 @@ class _Fase04State extends State<Fase04> {
       initialActiveOverlays: ['navigation', 'ranking'],
 
       player: PlayerHero(
-        position: Vector2(7 * 16, 5 * 16),
+        position: Vector2(83 * 16, 5 * 16),
         size: Vector2(96, 96),
       ),
     );

@@ -15,6 +15,24 @@ final upgradeLevel = atomAction((set) {
       set(userLevel, UserLevels.fase_04);
       break;
     case UserLevels.fase_04:
+      set(userLevel, UserLevels.fase_05);
+      break;
+    case UserLevels.fase_05:
+      set(userLevel, UserLevels.fase_06);
+      break;
+    case UserLevels.fase_06:
+      set(userLevel, UserLevels.fase_07);
+      break;
+    case UserLevels.fase_07:
+      set(userLevel, UserLevels.fase_08);
+      break;
+    case UserLevels.fase_08:
+      set(userLevel, UserLevels.fase_09);
+      break;
+    case UserLevels.fase_09:
+      set(userLevel, UserLevels.fase_10);
+      break;
+    case UserLevels.fase_10:
       break;
   }
   print("oi ${userLevel.state.name()}");
@@ -43,6 +61,24 @@ final setLevel = atomAction1((set, int level) {
     case 4:
       set(userLevel, UserLevels.fase_04);
       break;
+    case 5:
+      set(userLevel, UserLevels.fase_05);
+      break;
+    case 6:
+      set(userLevel, UserLevels.fase_06);
+      break;
+    case 7:
+      set(userLevel, UserLevels.fase_07);
+      break;
+    case 8:
+      set(userLevel, UserLevels.fase_08);
+      break;
+    case 9:
+      set(userLevel, UserLevels.fase_09);
+      break;
+    case 10:
+      set(userLevel, UserLevels.fase_10);
+      break;
     default:
       set(userLevel, UserLevels.fase_01);
   }
@@ -50,6 +86,10 @@ final setLevel = atomAction1((set, int level) {
 
 final setActualLevel = atomAction((set) {
   set(actualLevel, actualLevel.state + 1);
+});
+
+final setSpeed = atomAction1((set, int speed) {
+  set(userSpeed, speed);
 });
 
 final setLight = atomAction1((set, int light) {
@@ -79,6 +119,24 @@ final decreaseLevel = atomAction((set) {
       break;
     case UserLevels.fase_04:
       set(userLevel, UserLevels.fase_03);
+      break;
+    case UserLevels.fase_05:
+      set(userLevel, UserLevels.fase_04);
+      break;
+    case UserLevels.fase_06:
+      set(userLevel, UserLevels.fase_05);
+      break;
+    case UserLevels.fase_07:
+      set(userLevel, UserLevels.fase_06);
+      break;
+    case UserLevels.fase_08:
+      set(userLevel, UserLevels.fase_07);
+      break;
+    case UserLevels.fase_09:
+      set(userLevel, UserLevels.fase_08);
+      break;
+    case UserLevels.fase_10:
+      set(userLevel, UserLevels.fase_09);
       break;
   }
 });
@@ -125,4 +183,36 @@ final goToFase01 = atomAction((set) {
 
 final goToFase02 = atomAction((set) {
   set(userLevel, UserLevels.fase_02);
+});
+
+final goToFase03 = atomAction((set) {
+  set(userLevel, UserLevels.fase_03);
+});
+
+final goToFase04 = atomAction((set) {
+  set(userLevel, UserLevels.fase_04);
+});
+
+final goToFase05 = atomAction((set) {
+  set(userLevel, UserLevels.fase_05);
+});
+
+final goToFase06 = atomAction((set) {
+  set(userLevel, UserLevels.fase_06);
+});
+
+final goToFase07 = atomAction((set) {
+  set(userLevel, UserLevels.fase_07);
+});
+
+final goToFase08 = atomAction((set) {
+  set(userLevel, UserLevels.fase_08);
+});
+
+final goToFase09 = atomAction((set) {
+  set(userLevel, UserLevels.fase_09);
+});
+
+final goToFase10 = atomAction((set) {
+  set(userLevel, UserLevels.fase_10);
 });

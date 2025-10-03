@@ -55,20 +55,23 @@ class BossPhase2 extends BossBase {
        );
 
   @override
-  String getBossName() => "Boss Fase 2";
+  String getBossName() => "Chef Sombrio";
 
   @override
   String getVictoryMessage() =>
-      "Você me derrotou! Mas há outros mais fortes...";
+      "Impossível... Como você... O Mestre será avisado!";
 
   @override
-  String getCorrectAnswerMessage() => "Boa resposta! Mas ainda não acabou!";
+  String getCorrectAnswerMessage() =>
+      "Você tem sorte! Mas meus irmãos são mais cruéis!";
 
   @override
-  String getWrongAnswerMessage() => "Errou! Tente novamente!";
+  String getWrongAnswerMessage() =>
+      "Patético! Você não é digno de enfrentar o Mestre!";
 
   @override
-  String getInitialMessage() => "Eu sou mais forte que o chef anterior!";
+  String getInitialMessage() =>
+      "Ah, o primeiro a chegar até aqui... Prepare-se para conhecer o verdadeiro terror!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -89,19 +92,22 @@ class BossPhase3 extends BossBase {
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Guardião das Sombras";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Você... você realmente pode ser a esperança que esperávamos...";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() =>
+      "Impressionante! Mas os próximos guardiões são imortais!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() => "Falhou! As sombras consomem os fracos!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Você chegou até aqui... Mas eu sou apenas o terceiro guardião. Há sete mais poderosos!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -121,19 +127,22 @@ class BossPhase4 extends BossBase {
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Senhor do Caos";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Não... como isso é possível? O Mestre Supremo será alertado!";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() =>
+      "Você é habilidoso! Mas o caos sempre vence!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() => "O caos consome sua mente fraca!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Você derrotou três guardiões... Mas eu sou o Senhor do Caos! Prepare-se!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -146,26 +155,29 @@ class BossPhase5 extends BossBase {
     required super.size,
     required super.name,
   }) : super(
-         spritePath: 'enemy/idle_3.png',
-         phaseNumber: 3,
-         facePath: 'enemy/face_3.png',
+         spritePath: 'enemy/idle_4.png',
+         phaseNumber: 5,
+         facePath: 'enemy/face_4.png',
          spriteAnimationCustom: BossPhase5Spritesheet.simpleDirectionAnimation,
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Mestre da Destruição";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Incrível... Você pode realmente ser o escolhido...";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() =>
+      "Excelente! Mas a destruição é inevitável!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() => "A destruição consome os fracos de mente!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Quatro guardiões caíram... Mas eu sou o Mestre da Destruição! Sua jornada termina aqui!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -178,26 +190,28 @@ class BossPhase6 extends BossBase {
     required super.size,
     required super.name,
   }) : super(
-         spritePath: 'enemy/idle_3.png',
-         phaseNumber: 3,
-         facePath: 'enemy/face_3.png',
+         spritePath: 'enemy/idle_6.png',
+         phaseNumber: 6,
+         facePath: 'enemy/face_6.png',
          spriteAnimationCustom: BossPhase6Spritesheet.simpleDirectionAnimation,
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Lorde da Escuridão";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Impossível... Cinco guardiões... Você é realmente especial...";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() => "Magnífico! Mas a escuridão é eterna!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() => "A escuridão devora sua alma fraca!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Cinco guardiões caíram diante de você... Mas eu sou o Lorde da Escuridão! Prepare-se para o verdadeiro terror!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -217,19 +231,21 @@ class BossPhase7 extends BossBase {
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Imperador do Vazio";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Seis guardiões... Você pode ser a única esperança restante...";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() => "Extraordinário! Mas o vazio é infinito!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() => "O vazio consome sua existência!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Seis guardiões caíram... Mas eu sou o Imperador do Vazio! Sua determinação será testada!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -249,19 +265,21 @@ class BossPhase8 extends BossBase {
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Rei da Perdição";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Sete guardiões... Você é realmente o escolhido...";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() => "Fantástico! Mas a perdição é absoluta!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() => "A perdição corrompe sua alma!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Sete guardiões caíram... Mas eu sou o Rei da Perdição! Prepare-se para enfrentar o poder supremo!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -281,19 +299,22 @@ class BossPhase9 extends BossBase {
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Arquimago Supremo";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Oito guardiões... Você pode realmente salvar nosso mundo...";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() =>
+      "Incrível! Mas a magia suprema é invencível!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() => "A magia suprema destrói os indignos!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Oito guardiões caíram... Mas eu sou o Arquimago Supremo! Sua última prova antes do Mestre Final!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
@@ -313,19 +334,23 @@ class BossPhase10 extends BossBase {
        );
 
   @override
-  String getBossName() => "Boss Final";
+  String getBossName() => "Mestre Final";
 
   @override
-  String getVictoryMessage() => "Parabéns! Você completou o jogo!";
+  String getVictoryMessage() =>
+      "Incrível... Você derrotou todos os dez guardiões... Você é realmente o herói lendário que salvará nosso mundo!";
 
   @override
-  String getCorrectAnswerMessage() => "Impressionante! Mas eu sou o último!";
+  String getCorrectAnswerMessage() =>
+      "Extraordinário! Mas eu sou o Mestre Final! Prepare-se para o confronto definitivo!";
 
   @override
-  String getWrongAnswerMessage() => "Falhou! Este é o seu fim!";
+  String getWrongAnswerMessage() =>
+      "Falhou! O poder do Mestre Final é absoluto!";
 
   @override
-  String getInitialMessage() => "Eu sou o boss final! Ninguém passou por mim!";
+  String getInitialMessage() =>
+      "Você derrotou todos os dez guardiões... Mas eu sou o Mestre Final! O último obstáculo entre você e a salvação do mundo!";
 
   @override
   Future<SpriteAnimation> getHitAnimation() =>
