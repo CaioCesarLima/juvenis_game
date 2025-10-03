@@ -60,6 +60,11 @@ class _Fase03State extends State<Fase03> {
             size: Vector2(96, 96),
             name: p.name!,
             phaseNumber: 3,
+            hitbox: RectangleHitbox(
+              size: Vector2(80, 60),
+              position: Vector2(11, 12),
+              isSolid: true,
+            ),
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),

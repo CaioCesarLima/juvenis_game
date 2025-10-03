@@ -11,29 +11,80 @@ class BossFactory {
     required Vector2 size,
     required String name,
     required int phaseNumber,
+    required RectangleHitbox hitbox,
   }) {
     reset();
     switch (phaseNumber) {
       case 1:
-        return EnemyChef(position: position, size: size, name: name);
+        return EnemyChef(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 2:
-        return BossPhase2(position: position, size: size, name: name);
+        return BossPhase2(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 3:
-        return BossPhase3(position: position, size: size, name: name);
+        return BossPhase3(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 4:
-        return BossPhase4(position: position, size: size, name: name);
+        return BossPhase4(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 5:
-        return BossPhase5(position: position, size: size, name: name);
+        return BossPhase5(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 6:
-        return BossPhase6(position: position, size: size, name: name);
+        return BossPhase6(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 7:
-        return BossPhase7(position: position, size: size, name: name);
+        return BossPhase7(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 8:
-        return BossPhase8(position: position, size: size, name: name);
+        return BossPhase8(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 9:
-        return BossPhase9(position: position, size: size, name: name);
+        return BossPhase9(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       case 10:
-        return BossPhase10(position: position, size: size, name: name);
+        return BossPhase10(
+          position: position,
+          size: size,
+          name: name,
+          hitbox: hitbox,
+        );
       // Adicione mais fases conforme necessário
       default:
         throw ArgumentError('Fase $phaseNumber não implementada');
@@ -47,6 +98,7 @@ class BossPhase2 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_2.png',
          phaseNumber: 2,
@@ -84,6 +136,7 @@ class BossPhase3 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_3.png',
          phaseNumber: 3,
@@ -119,10 +172,11 @@ class BossPhase4 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_3.png',
          phaseNumber: 3,
-         facePath: 'enemy/face_4.png',
+         facePath: 'enemy/face_5.png',
          spriteAnimationCustom: BossPhase4Spritesheet.simpleDirectionAnimation,
        );
 
@@ -154,6 +208,7 @@ class BossPhase5 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_4.png',
          phaseNumber: 5,
@@ -189,6 +244,7 @@ class BossPhase6 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_6.png',
          phaseNumber: 6,
@@ -223,10 +279,11 @@ class BossPhase7 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_3.png',
          phaseNumber: 3,
-         facePath: 'enemy/face_3.png',
+         facePath: 'enemy/face_7.png',
          spriteAnimationCustom: BossPhase7Spritesheet.simpleDirectionAnimation,
        );
 
@@ -257,10 +314,11 @@ class BossPhase8 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_3.png',
          phaseNumber: 3,
-         facePath: 'enemy/face_3.png',
+         facePath: 'enemy/face_8.png',
          spriteAnimationCustom: BossPhase8Spritesheet.simpleDirectionAnimation,
        );
 
@@ -291,10 +349,11 @@ class BossPhase9 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_3.png',
          phaseNumber: 3,
-         facePath: 'enemy/face_3.png',
+         facePath: 'enemy/face_9.png',
          spriteAnimationCustom: BossPhase9Spritesheet.simpleDirectionAnimation,
        );
 
@@ -326,10 +385,11 @@ class BossPhase10 extends BossBase {
     required super.position,
     required super.size,
     required super.name,
+    required super.hitbox,
   }) : super(
          spritePath: 'enemy/idle_3.png',
          phaseNumber: 3,
-         facePath: 'enemy/face_3.png',
+         facePath: 'enemy/face_10.png',
          spriteAnimationCustom: BossPhase10Spritesheet.simpleDirectionAnimation,
        );
 

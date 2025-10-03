@@ -3,13 +3,17 @@ import 'package:juvenis_bonfire/enemy/boss_base.dart';
 import 'package:juvenis_bonfire/enemy/enemy_chef_spritesheet.dart';
 
 class EnemyChef extends BossBase {
-  EnemyChef({required super.position, required super.size, required super.name})
-    : super(
-        spritePath: 'enemy/idle.png',
-        phaseNumber: 1,
-        facePath: 'enemy/chef.png',
-        spriteAnimationCustom: EnemyChefSpritesheet.simpleDirectionAnimation,
-      );
+  EnemyChef({
+    required super.position,
+    required super.size,
+    required super.name,
+    required super.hitbox,
+  }) : super(
+         spritePath: 'enemy/idle.png',
+         phaseNumber: 1,
+         facePath: 'enemy/chef.png',
+         spriteAnimationCustom: EnemyChefSpritesheet.simpleDirectionAnimation,
+       );
 
   @override
   String getBossName() => "Chef Iniciante";

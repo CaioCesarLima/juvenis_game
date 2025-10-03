@@ -49,7 +49,7 @@ class _Fase09State extends State<Fase09> {
       backgroundColor: Colors.blueGrey,
       components: [GameController()],
 
-      // showCollisionArea: true,
+      showCollisionArea: true,
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('map/fase_9.tmj'),
         forceTileSize: Vector2(32, 32),
@@ -61,6 +61,11 @@ class _Fase09State extends State<Fase09> {
             size: Vector2(96, 96),
             name: p.name!,
             phaseNumber: 9,
+            hitbox: RectangleHitbox(
+              size: Vector2(80, 60),
+              position: Vector2(9, 12),
+              isSolid: true,
+            ),
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),

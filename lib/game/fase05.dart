@@ -49,7 +49,7 @@ class _Fase05State extends State<Fase05> {
       backgroundColor: Colors.blueGrey,
       components: [GameController()],
 
-      // showCollisionArea: true,
+      showCollisionArea: true,
       map: WorldMapByTiled(
         WorldMapReader.fromAsset('map/fase_5.tmj'),
         forceTileSize: Vector2(32, 32),
@@ -58,9 +58,14 @@ class _Fase05State extends State<Fase05> {
               EnemyVilan(position: p.position, size: Vector2(24, 24)),
           "chef": (p) => BossFactory.createBoss(
             position: p.position,
-            size: Vector2(160, 160),
+            size: Vector2(64, 64),
             name: p.name!,
             phaseNumber: 5,
+            hitbox: RectangleHitbox(
+              size: Vector2(50, 50),
+              position: Vector2(6, 10),
+              isSolid: true,
+            ),
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),

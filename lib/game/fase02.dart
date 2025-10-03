@@ -45,7 +45,7 @@ class _Fase02State extends State<Fase02> {
       lightingColorGame: Colors.black.withAlpha(255),
       collisionConfig: BonfireCollisionConfigDefault(),
       backgroundColor: Colors.blueGrey,
-      // showCollisionArea: true,
+      showCollisionArea: true,
       components: [GameController()],
 
       map: WorldMapByTiled(
@@ -62,6 +62,11 @@ class _Fase02State extends State<Fase02> {
             size: Vector2(96, 96),
             name: p.name!,
             phaseNumber: 2,
+            hitbox: RectangleHitbox(
+              size: Vector2(80, 80),
+              position: Vector2(11, 12),
+              isSolid: true,
+            ),
           ),
           "life": (p) =>
               LifeDecoration.withSprite(position: p.position, size: p.size),

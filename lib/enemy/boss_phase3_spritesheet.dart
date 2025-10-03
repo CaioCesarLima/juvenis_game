@@ -47,7 +47,7 @@ class BossPhase4Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(6 * 16, 6 * 16),
     ),
   );
 
@@ -70,7 +70,7 @@ class BossPhase5Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(230, 230),
+      textureSize: Vector2(40, 40),
     ),
   );
 
@@ -79,7 +79,7 @@ class BossPhase5Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(230, 230),
+      textureSize: Vector2(40, 40),
     ),
   );
 
@@ -88,7 +88,7 @@ class BossPhase5Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 4,
       stepTime: 0.10,
-      textureSize: Vector2(230, 230),
+      textureSize: Vector2(40, 40),
     ),
   );
 
@@ -132,27 +132,27 @@ class BossPhase7Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
     "enemy/idle_7.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(50, 50),
     ),
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
     "enemy/idle_7.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(50, 50),
     ),
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
     "enemy/hit_7.png",
     SpriteAnimationData.sequenced(
-      amount: 4,
+      amount: 3,
       stepTime: 0.10,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(50, 50),
     ),
   );
 
@@ -164,27 +164,27 @@ class BossPhase8Spritesheet {
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
     "enemy/idle_8.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(62, 62),
     ),
   );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
     "enemy/idle_8.png",
     SpriteAnimationData.sequenced(
-      amount: 6,
+      amount: 5,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(62, 62),
     ),
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
     "enemy/hit_8.png",
     SpriteAnimationData.sequenced(
-      amount: 4,
+      amount: 5,
       stepTime: 0.10,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(62, 62),
     ),
   );
 
@@ -198,7 +198,7 @@ class BossPhase9Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(68, 68),
     ),
   );
 
@@ -207,16 +207,16 @@ class BossPhase9Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(68, 68),
     ),
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
     "enemy/hit_9.png",
     SpriteAnimationData.sequenced(
-      amount: 4,
+      amount: 8,
       stepTime: 0.10,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(68, 68),
     ),
   );
 
@@ -230,7 +230,8 @@ class BossPhase10Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(82, 82),
+      texturePosition: Vector2(0, 0),
     ),
   );
 
@@ -239,16 +240,16 @@ class BossPhase10Spritesheet {
     SpriteAnimationData.sequenced(
       amount: 6,
       stepTime: 0.15,
-      textureSize: Vector2(32, 32),
+      textureSize: Vector2(68, 68),
     ),
   );
 
   static Future<SpriteAnimation> get hitAnimation => SpriteAnimation.load(
     "enemy/hit_10.png",
     SpriteAnimationData.sequenced(
-      amount: 4,
-      stepTime: 0.10,
-      textureSize: Vector2(32, 32),
+      amount: 8,
+      stepTime: 0.15,
+      textureSize: Vector2(82, 82),
     ),
   );
 

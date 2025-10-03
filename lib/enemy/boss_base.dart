@@ -15,6 +15,7 @@ abstract class BossBase extends SimpleEnemy
   final String facePath;
   final int phaseNumber;
   final SimpleDirectionAnimation spriteAnimationCustom;
+  final RectangleHitbox hitbox;
 
   BossBase({
     required this.spriteAnimationCustom,
@@ -24,6 +25,7 @@ abstract class BossBase extends SimpleEnemy
     required this.spritePath,
     required this.phaseNumber,
     required this.facePath,
+    required this.hitbox,
   }) : super(
          animation: spriteAnimationCustom,
          speed: 40,
@@ -144,13 +146,7 @@ abstract class BossBase extends SimpleEnemy
       _bossListener();
     });
 
-    add(
-      RectangleHitbox(
-        size: Vector2(80, 80),
-        position: Vector2(11, 12),
-        isSolid: true,
-      ),
-    );
+    add(hitbox);
     return super.onLoad();
   }
 
