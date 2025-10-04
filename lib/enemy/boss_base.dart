@@ -71,32 +71,69 @@ abstract class BossBase extends SimpleEnemy
       context: gameRef.context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Escolha a resposta:"),
+          backgroundColor: Colors.black87,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+            side: BorderSide(
+              color: Colors.purpleAccent.withOpacity(0.3),
+              width: 1,
+            ),
+          ),
+          title: const Text(
+            "Escolha a resposta:",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.0,
+            ),
+          ),
           content: SingleChildScrollView(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 ...question.options.map((q) {
                   return Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        if (q.isCorrect) {
-                          correctUp();
-                          nextQuestion();
-                          upgradeScore(100);
-                          receiveDamage();
-                          if (chefLife.state <= 0) {
-                            _say(getVictoryMessage());
+                    padding: const EdgeInsets.symmetric(vertical: 6.0),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          if (q.isCorrect) {
+                            correctUp();
+                            nextQuestion();
+                            upgradeScore(100);
+                            receiveDamage();
+                            if (chefLife.state <= 0) {
+                              _say(getVictoryMessage());
+                            } else {
+                              _say(getCorrectAnswerMessage());
+                            }
                           } else {
-                            _say(getCorrectAnswerMessage());
+                            demage();
+                            _say(getWrongAnswerMessage());
                           }
-                        } else {
-                          demage();
-                          _say(getWrongAnswerMessage());
-                        }
-                      },
-                      child: Text(q.text),
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.purpleAccent,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          elevation: 8,
+                          shadowColor: Colors.purpleAccent.withOpacity(0.5),
+                        ),
+                        child: Text(
+                          q.text,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                      ),
                     ),
                   );
                 }),

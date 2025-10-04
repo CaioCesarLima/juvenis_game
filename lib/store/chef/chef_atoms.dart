@@ -50,12 +50,15 @@ final setChefLife = atomAction((set) {
 Map<int, List<QuestionModel>> getQuestions = {
   1: [
     QuestionModel(
-      text: "Quem construiu a arca para escapar do dilúvio?",
+      text: "Segundo Romanos 10:12-13, Jesus nos chama para servir a:",
       options: [
-        OptionModel(text: "Noé", isCorrect: true),
-        OptionModel(text: "Moisés", isCorrect: false),
-        OptionModel(text: "Abraão", isCorrect: false),
-        OptionModel(text: "Davi", isCorrect: false),
+        OptionModel(
+          text: "Todas as pessoas, mesmo que diferentes de nós",
+          isCorrect: true,
+        ),
+        OptionModel(text: "Somente ao povo judeu", isCorrect: false),
+        OptionModel(text: "Aos ricos", isCorrect: false),
+        OptionModel(text: "Aos que vivem perto de nós", isCorrect: false),
       ],
     ),
     QuestionModel(
