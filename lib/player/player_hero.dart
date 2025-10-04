@@ -49,8 +49,12 @@ class PlayerHero extends SimplePlayer
       // Atualiza a vida do player com o valor do atom
       final newLife = userLife.state.toDouble();
       Logger().i("DISPAROU AQUI: $newLife, current life: $life");
-      updateLife(newLife);
-      Logger().i("After updateLife: $newLife, current life: $life");
+
+      // Só atualiza se a vida realmente mudou para evitar loops
+      if ((newLife - life).abs() > 0.1) {
+        updateLife(newLife);
+        Logger().i("After updateLife: $newLife, current life: $life");
+      }
 
       // Se a vida foi resetada e o player estava morto, reviver
       if (newLife > 0 && isDead) {
@@ -95,9 +99,7 @@ class PlayerHero extends SimplePlayer
     Logger().i(
       "PlayerHero.onReceiveDamage - after demage() - life: $life, userLife: ${userLife.state}",
     );
-    super.onReceiveDamage(origin, damage, attacker);
-    Logger().i(
-      "PlayerHero.onReceiveDamage - after super - life: $life, userLife: ${userLife.state}",
-    );
+    // Não chama super.onReceiveDamage para evitar duplicação de dano
+    // O dano já foi aplicado através da ação demage()
   }
 }
